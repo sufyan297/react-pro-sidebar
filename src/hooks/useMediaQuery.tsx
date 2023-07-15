@@ -1,6 +1,7 @@
 import React from 'react';
 
 export const useMediaQuery = (breakpoint?: string): boolean => {
+  //NextJS 13 - Window undefined bug resolved.
   const [matches, setMatches] = React.useState(
     !!breakpoint && (typeof window !== "undefined" && window.matchMedia(breakpoint).matches)
   );
